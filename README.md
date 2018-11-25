@@ -105,5 +105,8 @@ kubectl expose deployment k8sdemo --type=LoadBalancer
 
 Click through Dashboard to external url then add /hello
 
-
+Show some of the Actuator endpoints:
+/actuator/health
+/actuator/metrics
+/actuattor/env
 
