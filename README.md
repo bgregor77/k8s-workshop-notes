@@ -75,6 +75,8 @@ Explain how this is just for demonstration, and never to do this. Disables actua
 ```
 management.security.enabled=false
 management.endpoints.web.exposure.include=*
+endpoints.env.enabled=true
+
 ```
 
 Add a Dockerfile
