@@ -81,7 +81,8 @@ endpoints.env.enabled=true
 
 Add a Dockerfile
 
-```FROM openjdk:8-alpine
+```
+FROM openjdk:8-alpine
 VOLUME /tmp
 ADD ./build/libs/k8sdemo-0.0.1-SNAPSHOT.jar /k8sdemo.jar
 RUN sh -c 'touch /k8sdemo.jar'
