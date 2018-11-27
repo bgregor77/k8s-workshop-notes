@@ -15,11 +15,11 @@ PKS Topics
 
 ```
 pks
-pks login -a api.pks.jg-aws.com -u bryan -k
-plans
+pks login -a <pks endpoint>> -u <username> -k
+pks plans
 pks clusters
 
-#pks create-cluster bg-demo-cluster --external-hostname bryan.pks.jg-aws.com --plan small
+#pks create-cluster demo-cluster --external-hostname <cluster url> --plan <plan name>
 ```
 
 Open Dashboard to show cluster
@@ -27,7 +27,7 @@ Open Dashboard to show cluster
 
 
 ```
-pks get-credentials bg-demo-cluster
+pks get-credentials demo-cluster
 
 kubectl get nodes 
 ```
@@ -39,9 +39,12 @@ Demo App
 
 https://start.spring.io/
 
-Switcn to Gradle Project
+Switch to Gradle Project
+
 Group: com.springdev.k8s
+
 Artifact: k8sdemo
+
 Add Web, Actuator dependencies
 
 Generate Project
@@ -93,13 +96,13 @@ Build and package:
 
 ```
 ./gradlew build
-docker build -t bgregorius77/k8sdemo:0.0.1 .
-docker push bgregorius77/k8sdemo
+docker build -t <dockerhub username>/k8sdemo:0.0.1 .
+docker push <dockerhub username>/k8sdemo
 ```
 
 Deploy
 ```
-kubectl run k8sdemo --image bgregorius77/k8sdemo:0.0.1 --port=8080
+kubectl run k8sdemo --image <dockerhub username>/k8sdemo:0.0.1 --port=8080
 kubectl expose deployment k8sdemo --type=LoadBalancer
 ```
 
